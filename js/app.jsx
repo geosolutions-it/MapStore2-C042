@@ -19,7 +19,7 @@ ConfigUtils.setConfigProp('themePrefix', 'MapStore2-C042');
  * Use a custom plugins configuration file with:
  *
  * ConfigUtils.setLocalConfigurationFile('MapStore2/web/client/localConfig.json');
- * 
+ *
  */
 ConfigUtils.setLocalConfigurationFile('localConfig.json');
 
