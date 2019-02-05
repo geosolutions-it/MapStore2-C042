@@ -22,6 +22,15 @@
           }
       }
     },
+    "mapConstraints": {
+      "crs": "EPSG:3857",
+      "restrictedExtent": [
+        1060334.456371965,
+        5228292.734706056,
+        1392988.403469052,
+        5503466.036532691
+      ]
+    },
     "authenticationRules": [{
         "urlPattern": ".*geostore.*",
         "method": "bearer"
@@ -30,7 +39,17 @@
       {"name": "routing", "path": "routing.location.pathname"},
       {"name": "browser", "path": "browser"},
       {"name": "featuregridmode", "path": "featuregrid.mode"}],
-    "projectionDefs": [],
+    "projectionDefs": [{
+            "code": "EPSG:3003",
+            "def": "+proj=tmerc +lat_0=0 +lon_0=9 +k=0.9996 +x_0=1500000 +y_0=0 +ellps=intl +units=m +no_defs",
+            "extent": [1241482.0019, 973563.1609, 1830078.9331, 5215189.0853],
+            "worldExtent": [6.6500, 8.8000, 12.0000, 47.0500]
+        },{
+            "code": "EPSG:32632",
+            "def": "+proj=utm +zone=32 +ellps=WGS84 +datum=WGS84 +units=m +no_defs",
+            "extent": [166021.4431, 0.0000, 833978.5569, 9329005.1825],
+            "worldExtent": [6.0000, 0.0000, 12.0000, 84.0000]
+        }],
     "initialState": {
       "defaultState": {
         "maptype": {
@@ -45,24 +64,12 @@
                 "isNew": true,
                 "autoload": false
             },
-            "selectedService": "Demo CSW Service",
+            "selectedService": "Adbarno WMS",
             "services": {
-              "Demo CSW Service": {
-                "url": "https://demo.geo-solutions.it/geoserver/csw",
-                "type": "csw",
-                "title": "Demo CSW Service",
-                "autoload": true
-              },
-              "Demo WMS Service": {
-                "url": "https://demo.geo-solutions.it/geoserver/wms",
+              "Adbarno WMS": {
+                "url": "/geoserver/wms",
                 "type": "wms",
-                "title": "Demo WMS Service",
-                "autoload": false
-              },
-              "Demo WMTS Service": {
-                "url": "https://demo.geo-solutions.it/geoserver/gwc/service/wmts",
-                "type": "wmts",
-                "title": "Demo WMTS Service",
+                "title": "Adbarno WMS",
                 "autoload": false
               }
             }
@@ -77,18 +84,6 @@
             "en": {
               "code": "en-US",
               "description": "English"
-            },
-            "fr": {
-              "code": "fr-FR",
-              "description": "Français"
-            },
-            "de": {
-              "code": "de-DE",
-              "description": "Deutsch"
-            },
-            "es": {
-              "code": "es-ES",
-              "description": "Español"
             }
           }
         }
@@ -103,6 +98,9 @@
                         "interactions": {
                           "pinchRotate": false,
                           "altShiftDragRotate": false
+                        },
+                        "view": {
+                          "minZoom": 6
                         }
                       }
                     },
@@ -190,7 +188,7 @@
                     }
                 }
             }, "Login",
-            "OmniBar", "BurgerMenu", "Expander", "GlobeViewSwitcher", {
+            "OmniBar", "BurgerMenu", "Expander", {
               "name": "Cookie",
               "cfg": {
                 "externalCookieUrl" : "",
@@ -297,7 +295,19 @@
                 "filterAllowedCRS": ["EPSG:4326", "EPSG:3857"],
                 "additionalCRS": {}
               }
-            }, {
+            },
+            {
+                "name": "CRSSelector",
+                "cfg":{
+                    "additionalCRS": {
+                        "EPSG:3003": { "label": "EPSG:3003" },
+                        "EPSG:32632": { "label": "EPSG:32632" }
+                    },
+                    "filterAllowedCRS": ["EPSG:4326", "EPSG:3857"],
+                    "allowedRoles": "ALL"
+                }
+            },
+            {
                 "name": "Search",
                 "cfg": {
                   "withToggle": ["max-width: 768px", "min-width: 768px"]
@@ -332,6 +342,9 @@
                 }
             }, {
                 "name": "ZoomOut",
+                "cfg":{
+                   "minZoom": 6
+                },
                 "override": {
                     "Toolbar": {
                         "alwaysVisible": true
@@ -344,7 +357,7 @@
                 "declineUrl" : "http://www.google.com"
                 }
             },
-            "OmniBar", "Login", "Save", "SaveAs", "BurgerMenu", "Expander", "Undo", "Redo", "FullScreen", "GlobeViewSwitcher", "SearchServicesConfig", "WidgetsBuilder", "Widgets",
+            "OmniBar", "Login", "Save", "SaveAs", "BurgerMenu", "Expander", "Undo", "Redo", "FullScreen", "SearchServicesConfig", "WidgetsBuilder", "Widgets",
             "FloatingLegend",
             "FeedbackMask"
         ],
@@ -501,9 +514,9 @@
           "name": "DashboardEditor",
           "cfg": {
              "catalog": {
-              "url": "https://demo.geo-solutions.it/geoserver/csw",
-              "type": "csw",
-              "title": "Demo CSW Service",
+              "url": "/geoserver/wms",
+              "type": "wms",
+              "title": "Adbarno WMS service",
               "autoload": true
             },
             "containerPosition": "columns"
