@@ -5,6 +5,7 @@ const extractThemesPlugin = require('./MapStore2/themes.js').extractThemesPlugin
 
 module.exports = {
     ...(require('./MapStore2/buildConfig')(
+
         {
             'MapStore2-C042': path.join(__dirname, "js", "app"),
             'MapStore2-C042-embedded': path.join(__dirname, "MapStore2", "web", "client", "product", "embedded"),
@@ -54,6 +55,9 @@ module.exports = {
             },
             '/geoserver': {
                 target: "http://adbarno.tk",
+                headers: {
+                    host: "adbarno.tk"
+                },
                 pathRewrite: { '/docs': '/mapstore/docs' }
             }
         }
