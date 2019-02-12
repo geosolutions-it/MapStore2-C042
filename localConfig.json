@@ -33,7 +33,7 @@
       "minZoom": 6,
       "projectionsConstraints": {
         "EPSG:3003": {
-          "minZoom": 5
+          "minZoom": 2
         },
         "EPSG:3857": {
           "minZoom": 7
@@ -53,9 +53,20 @@
       {"name": "featuregridmode", "path": "featuregrid.mode"}],
     "projectionDefs": [{
             "code": "EPSG:3003",
-            "def": "+proj=tmerc +lat_0=0 +lon_0=9 +k=0.9996 +x_0=1500000 +y_0=0 +ellps=intl +units=m +no_defs",
-            "extent": [1241482.0019432348,972767.2605398067,1847542.2626266503,5215189.085323715],
-            "worldExtent": [6.6500, 8.8000, 12.0000, 47.0500]
+            "def_old": "+proj=tmerc +lat_0=0 +lon_0=9 +k=0.9996 +x_0=1500000 +y_0=0 +ellps=intl +units=m +no_defs",
+            "def": "+proj=tmerc +lat_0=0 +lon_0=9 +k=0.9996 +x_0=1500000 +y_0=0 +ellps=intl +towgs84=-104.1,-49.1,-9.9,0.971,-2.917,0.714,-11.68 +units=m +no_defs",
+            "extent": [
+              1226016.2107837894,
+              4042801.6555425473,
+              1768610.1021991083,
+              5214254.44651009
+            ],
+            "worldExtent": [
+              6.6500,
+              8.8000,
+              12.0000,
+              47.0500
+            ]
         },{
             "code": "EPSG:32632",
             "def": "+proj=utm +zone=32 +ellps=WGS84 +datum=WGS84 +units=m +no_defs",

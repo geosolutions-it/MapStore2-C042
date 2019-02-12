@@ -53,12 +53,12 @@ module.exports = {
                     host: "adbarno.tk"
                 }
             },
-            '/geoserver': {
+            '/geoserver/': {
                 target: "http://adbarno.tk",
+                secure: false,
                 headers: {
                     host: "adbarno.tk"
-                },
-                pathRewrite: { '/docs': '/mapstore/docs' }
+                }
             }
         }
     }
