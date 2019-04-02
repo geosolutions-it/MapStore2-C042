@@ -375,7 +375,6 @@
                 }
             },
             "OmniBar", "Login", "Save", "SaveAs", "BurgerMenu", "Expander", "Undo", "Redo", "FullScreen", "SearchServicesConfig", "WidgetsBuilder", "Widgets",
-            "FloatingLegend",
             "FeedbackMask"
         ],
         "embedded": [{
