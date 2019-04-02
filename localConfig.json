@@ -87,12 +87,18 @@
                 "isNew": true,
                 "autoload": false
             },
-            "selectedService": "Adbarno WMS",
+            "selectedService": "Adbarno CSW Service",
             "services": {
-              "Adbarno WMS": {
+              "Adbarno CSW Service": {
+                "url": "/geoserver/csw",
+                "type": "csw",
+                "title": "Adbarno CSW Service",
+                "autoload": false
+              },
+              "Adbarno WMS Service": {
                 "url": "/geoserver/wms",
                 "type": "wms",
-                "title": "Adbarno WMS",
+                "title": "Adbarno WMS Service",
                 "autoload": false
               }
             }
@@ -530,9 +536,9 @@
           "name": "DashboardEditor",
           "cfg": {
              "catalog": {
-              "url": "/geoserver/wms",
-              "type": "wms",
-              "title": "Adbarno WMS service",
+              "url": "/geoserver/csw",
+              "type": "csw",
+              "title": "Adbarno CSW service",
               "autoload": true
             },
             "containerPosition": "columns"
