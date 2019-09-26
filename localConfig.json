@@ -11,7 +11,6 @@
     "ignoreMobileCss": false,
     "useAuthenticationRules": true,
     "loadAfterTheme": true,
-    "translationsPath": "./MapStore2/web/client/translations",
     "themePrefix": "MapStore2-C042",
     "defaultMapOptions": {
       "cesium": {
@@ -499,7 +498,7 @@
                 "className": "navbar shadow navbar-home"
             }
         }, "ManagerMenu", "Login","Language", "NavMenu", "Attribution", "ScrollTop", "Notifications"],
-        "maps": ["HomeDescription", "MapSearch", "CreateNewMap", "FeaturedMaps", "ContentTabs",
+        "maps": [{"name": "HomeDescription", "cfg": {"name": ""}}, "MapSearch", "CreateNewMap", "FeaturedMaps", "ContentTabs",
 
           {
             "name": "Maps",

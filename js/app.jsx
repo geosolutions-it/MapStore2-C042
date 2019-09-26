@@ -12,7 +12,7 @@ const ConfigUtils = require('../MapStore2/web/client/utils/ConfigUtils');
  *
  * ConfigUtils.setConfigProp('translationsPath', ['./MapStore2/web/client/translations', './translations']);
  */
-ConfigUtils.setConfigProp('translationsPath', './MapStore2/web/client/translations');
+ConfigUtils.setConfigProp('translationsPath', ['./MapStore2/web/client/translations', './translations']);
 ConfigUtils.setConfigProp('themePrefix', 'MapStore2-C042');
 
 /**
@@ -45,6 +45,12 @@ const appConfig = require('../MapStore2/web/client/product/appConfig');
  *
  * const plugins = require('./plugins');
  */
-const plugins = require('../MapStore2/web/client/product/plugins');
+const basePlugins = require('../MapStore2/web/client/product/plugins');
 
-require('../MapStore2/web/client/product/main')(appConfig, plugins);
+require('../MapStore2/web/client/product/main')(appConfig, {
+    ...basePlugins,
+    plugins: {
+        ...basePlugins.plugins,
+        FooterPlugin: require('../js/plugins/Footer')
+    }
+});
