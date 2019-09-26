@@ -1,0 +1,8 @@
+{
+    "locale": "en-US",
+    "messages": {
+        "home": {
+            "shortDescription": "<a target=\"_blank\" href=\"http://interreg-maritime.eu/web/proterina-3evolution\" ><img src=\"./assets/logo_prote.png\" style=\"width: 550px;\" /></a>"
+        }
+    }
+}

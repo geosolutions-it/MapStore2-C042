@@ -26,7 +26,7 @@ module.exports = {
     devServer: {
         proxy: {
             '/rest/geostore': {
-                target: "http://adbarno.tk/mapstore",
+                target: "https://geodata.appenninosettentrionale.it/mapstore",
                 secure: false,
                 headers: {
                     host: "adbarno.tk"
@@ -54,7 +54,7 @@ module.exports = {
                 }
             },
             '/geoserver/': {
-                target: "http://adbarno.tk",
+                target: "https://geodata.appenninosettentrionale.it",
                 secure: false,
                 headers: {
                     host: "adbarno.tk"
